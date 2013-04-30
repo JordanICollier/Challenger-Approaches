@@ -36,3 +36,5 @@ Games
 
   Google Maps
   -search feature!
+  -within certain miles
+  -search for groups and friends?
