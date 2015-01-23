@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TeachMe</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div class="navbar">
+  <div class="container">
+    <!-- navbar here -->
+  </div>
+</div>
+<div class="container">
+  <%= yield %>
+</div>
+<footer>
+  <div class="container">
+    <footer>
+      <div class="row">
+        <div class="col-md-6">
+          <a href="about">About</a>
+          |
+          <a href="terms">Terms</a>
+          |
+          <a href="faq">FAQ</a>
+          |
+          <a href="tasks">Tasks</a>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="https://www.linkedin.com/in/jordanicollier">
+            <%= image_tag"linked.jpg", class: "img-footer" %>
+          </a>
+          <a href="https://github.com/JordanCollier">
+            <%= image_tag"github.png", class: "img-footer" %>
+          </a>
+          <a href="https://twitter.com/JordanICollier">
+            <%= image_tag"twitter.png", class: "img-footer" %>
+          </a>
+          <a href="https://students.gschool.it/students/206">
+            <%= image_tag "galvanize.png", class: "img-footer" %>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <!-- footer stuff here -->
+  </div>
+</footer>
+</body>
+</html>
