@@ -1,9 +1,18 @@
-= image_tag @user.avatar
-%h1
-  = @user.full_name
-= @user.whats_up
-%br
-= @user.about
-%br
-- if current_user == @user
-  = link_to "EDIT", edit_user_path(@user.id)
+%section.users-show-layout
+
+  %header
+    %aside.profile-pic
+      = image_tag @user.avatar
+    .row.main-title
+      %h1.header= @user.full_name
+      %section.status-container
+        %p.status= @user.whats_up
+        - if current_user == @user
+          %input(placeholder="#{@user.whats_up}" for="user.whats_up")
+          = link_to "What's up?", "#", data: { edit: 'whats-up'}
+  %section.content
+    %textarea= @user.about
+
+  %footer
+    - if current_user == @user
+      = link_to "EDIT", edit_user_path(@user.id)

@@ -1,0 +1,43 @@
+.users-show-layout {
+  header {
+    @include make-row();
+  }
+
+  .main-title {
+    @include make-lg-column(10);
+
+    .header {
+      @include make-lg-column(5);
+      text-align: right;
+    }
+
+    .status-container {
+      @include make-lg-column(11);
+      left: 10%;
+      text-align: right;
+    }
+
+    .status {
+      width: 32%;
+      border: solid $main-border 1px;
+      padding: 5px;
+    }
+
+    [data-edit="whats-up"] {
+      @include make-lg-column(4);
+      margin-left: 15px;
+      margin-right: 40%;
+    }
+
+    [for="user.whats_up"] {
+      width: 32%;
+      padding: 5px;
+      float: left;
+      display: none;
+    }
+  }
+
+  .profile-pic {
+    @include make-lg-column(2);
+  }
+}
