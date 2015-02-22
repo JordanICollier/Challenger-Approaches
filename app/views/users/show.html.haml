@@ -1,0 +1,8 @@
+%h1
+  = @user.full_name
+= @user.whats_up
+%br
+= @user.about
+%br
+- if current_user == @user
+  = link_to "EDIT", edit_user_path(@user.id)
