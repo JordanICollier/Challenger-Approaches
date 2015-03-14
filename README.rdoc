@@ -38,3 +38,5 @@ Games
   -search feature!
   -within certain miles
   -search for groups and friends
+
+  Set a more defined address for groups

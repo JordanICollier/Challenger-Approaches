@@ -20,7 +20,7 @@ private
   def user_params
     params.require(:user).permit(
       :first_name, :last_name, :whats_up, :about,
-      :avatar, game_ids: [], friend_ids: []
+      :avatar, game_ids: [], friend_ids: [], location: [:lat, :long, :user_id]
     )
   end
 
