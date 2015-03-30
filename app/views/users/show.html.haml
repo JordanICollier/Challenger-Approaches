@@ -8,7 +8,8 @@
       %section.status-container
         %p.status= @user.whats_up
         - if current_user == @user
-          %input(placeholder="#{@user.whats_up}" for="user.whats_up")
+          %form#user_form
+            %input(placeholder="#{@user.whats_up}" for="user.whats_up")
           = link_to "What's up?", "#", data: { edit: 'whats-up'}
   %section.content
     %textarea= @user.about

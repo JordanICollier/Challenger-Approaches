@@ -8,5 +8,9 @@ class User < ActiveRecord::Base
    "#{first_name} #{last_name}"
   end
 
+  def as_json(options={})
+    { id: id, email: email }
+  end
+
   mount_uploader :avatar, AvatarUploader
 end

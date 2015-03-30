@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user
+  respond_to :html, :json
 
   def show
   end
@@ -9,11 +10,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
-      redirect_to user_path
-    else
-      render :edit
-    end
+    @user.update(user_params)
+    respond_with @user
   end
 
 private

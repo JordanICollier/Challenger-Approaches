@@ -1,19 +1,41 @@
-function thing() {
+(function() {
 
-  var thing = {
-  };
-}
 
-thing();
+  function WhatsUpListener(options) {
+    this.$el = options.$el;
+    this.addObservers();
+  }
 
-new thing();
-// {}
+  WhatsUpListener.prototype.addObservers = function() {
+    this.$el.click(function(e) {
+      e.preventDefault();
+      $(this).siblings('.status').hide();
+      $(this).siblings('form').find('input').show();
+      $('#user_form').submit(function(e) {
+        e.preventDefault();
+        var whatsUp = $('#user_form input').val();
+        var userId  = window.location.href.match(/users\/()\d/)[1];
 
-$(document).on('ready', function() {
-  $('[data-edit="whats-up"]').click(function(e) {
-    e.preventDefault();
+        $.ajax('/users/'+userId, {
+          dataType: 'json',
+          type: 'put',
+          data: {
+            id: userId,
+            users: { "whats_up": whatsUp }
+          },
+          success: function() { console.log('lol yes'); },
+          error: function() { console.log('luke no'); }
+        })
+      })
+    });
+  }
 
-    $(this).siblings('.status').hide();
-    $(this).siblings('input').show();
-  });
-});
+
+
+
+  //{}
+
+  $(document).on('ready', function() {
+    new WhatsUpListener({ $el: $('[data-edit="whats-up"]') });
+  })
+})();
