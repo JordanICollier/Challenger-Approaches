@@ -1,1 +1,1 @@
-Teach me dating style app
+This will be a smash bros locator app, it will be using google maps api, have personal profiles and enable you to find other smashers near you. More details to come.
