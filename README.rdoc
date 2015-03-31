@@ -1,1 +1,4 @@
-This will be a smash bros locator app, it will be using google maps api, have personal profiles and enable you to find other smashers near you. More details to come.
+This will be a smash bros locator app,
+it will be using google maps api,
+have personal profiles and enable you to find other smashers near you.
+Customization on what which game you want to play: Smash 4, Project M, Brawl, Melee, 20XX, 64
