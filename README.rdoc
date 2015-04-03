@@ -2,3 +2,24 @@ This will be a smash bros locator app,
 it will be using google maps api,
 have personal profiles and enable you to find other smashers near you.
 Customization on what which game you want to play: Smash 4, Project M, Brawl, Melee, 20XX, 64
+
+As a user you can
+  - Join a group
+  - Find a group in your area
+  - Display your favorite games to play
+  - Favorite groups
+  - About section
+  - Favicon of main smash bro
+
+As a group you can
+  - Add/Remove users
+  - Set a location
+  - Set the group to public/private
+  - Show what games your group plays
+  - About section
+
+Games
+  - Name
+  - Platform
+  - Users
+  - Groups
