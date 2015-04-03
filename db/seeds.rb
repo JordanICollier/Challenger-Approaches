@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Game::SMASH_GAMES.each do |name, platform|
+  Game.create(name: name, platform: platform)
+end
