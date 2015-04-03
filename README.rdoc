@@ -23,3 +23,13 @@ Games
   - Platform
   - Users
   - Groups
+  - validate that only smash bro games get saved
+
+->
+  go to edit profile
+  see dropdown of games ==
+  as well as existing games
+  select a game
+  click plus button
+  through ajax create a gameusers
+  update dom
