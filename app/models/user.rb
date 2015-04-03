@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :game_users
+  has_many :games, through: :game_users
+
+  accepts_nested_attributes_for :game_users
+
   def full_name
    "#{first_name} #{last_name}"
   end
