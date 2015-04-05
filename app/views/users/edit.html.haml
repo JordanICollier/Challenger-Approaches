@@ -1,9 +1,12 @@
 = simple_form_for(@user) do |f|
   = f.input :first_name
+
   = f.input :last_name
   = f.input :whats_up
   = f.input :about, as: :text
   = f.input :avatar, as: :file
 
+  = select_tag '', options_for_select(Game.all.pluck(:name, :id))
+  %button( data-game=true ) +
 
   = f.button :submit
