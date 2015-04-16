@@ -9,18 +9,59 @@
 <body>
 
 
-  <div class="navbar">
+  <header class="masthead">
     <div class="container">
-      <div id="user-nav">
-        <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. Not you?
-        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-        <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-        <% end %>
+    <div class="row">
+      <div class="col-sm-6">
+        <h1><a href="#" title="scroll down for your viewing pleasure">Hey Neighbor</a><p class="lead">Big Top Header and Fixed Sidebar</p></h1>
+      </div>
+      <div class="col-sm-6">
+        <div class="pull-right hidden-sm">
+          <h1><a href="#"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h1>
+        </div>
       </div>
     </div>
+    </div>
+  </header>
+
+
+  <!-- Begin Navbar -->
+  <div id="nav">
+    <div class="navbar navbar-default navbar-static">
+      <div class="container">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="glyphicon glyphicon-bar"></span>
+          <span class="glyphicon glyphicon-bar"></span>
+          <span class="glyphicon glyphicon-bar"></span>
+        </a>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+          <ul class="nav pull-right navbar-nav">
+            <li>
+              <form class="navbar-form">
+            <input type="text" class="form-control" placeholder="Search">
+            <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+          </form>
+            </li>
+            <li>
+              <a href="#"><i class="glyphicon glyphicon-flag"></i> <span class="badge">2</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- /.navbar -->
   </div>
+
+
+
+
+
   <div class="container">
     <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>

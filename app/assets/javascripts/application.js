@@ -15,3 +15,12 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+$(function(){
+  $('#nav').affix({
+      offset: {
+        top: $('header').height()
+      }
+  });
+});

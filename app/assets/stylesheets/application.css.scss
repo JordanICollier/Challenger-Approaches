@@ -20,3 +20,35 @@ $main-border: $purple;
 textarea {
   resize: none;
 }
+
+
+/* bootstrap 3 helpers */
+
+.navbar-form input, .form-inline input {
+	width:auto;
+}
+
+
+
+header {
+	height:280px;
+}
+
+#nav {
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  margin: 0 0 50px 0;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:10;
+}
+
+
+#DIV_3 {
+  margin-top: 70px;
+}
