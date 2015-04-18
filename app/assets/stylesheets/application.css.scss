@@ -52,3 +52,12 @@ header {
 #DIV_3 {
   margin-top: 70px;
 }
+
+.backin{
+  background-image: url(image-path('banner-smash.png'));
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.blue {background-color:#916FF7;color:#fff}
