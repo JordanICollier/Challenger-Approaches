@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403005914) do
+ActiveRecord::Schema.define(version: 20150418030248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "friend_lists", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "friend_id"
+  end
 
   create_table "game_users", force: :cascade do |t|
     t.integer  "game_id"
