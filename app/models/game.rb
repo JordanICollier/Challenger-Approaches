@@ -18,4 +18,8 @@ class Game < ActiveRecord::Base
 
   validates :name, inclusion: { in: SMASH_GAME_NAMES }
   validates :platform, inclusion: { in: SMASH_PLATFORMS }
+
+  def to_s
+    name
+  end
 end
