@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    # binding.pry
     @user.update(user_params)
     respond_with @user
   end
@@ -17,7 +18,10 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :whats_up, :about, :avatar)
+    params.require(:user).permit(
+      :first_name, :last_name, :whats_up, :about,
+      :avatar, game_ids: [], friend_ids: []
+    )
   end
 
   def set_user
