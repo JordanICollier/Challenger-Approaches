@@ -13,6 +13,12 @@
           = link_to "What's up?", "#", data: { edit: 'whats-up'}
   %section.content
     %textarea= @user.about
+    %h4 Games I play!
+    - @user.games.each do |game|
+      %p= game
+    %h4 All my friends
+    - @user.friends.limit(6).each do |friend|
+      %p= friend.full_name
 
   %footer
     - if current_user == @user
