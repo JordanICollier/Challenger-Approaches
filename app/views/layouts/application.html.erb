@@ -8,26 +8,22 @@
 </head>
 <body>
 
-
-  <header class="masthead backin" >
+  <header class="backin">
+    <div class="smashin"></div>
+    <div class="smashin-overlay"></div>
     <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <h1>Hey Neighbor<p class="lead">Big Top Header and Fixed Sidebar</p></h1>
-      </div>
-      <div class="col-sm-6">
-        <div class="pull-right hidden-sm">
-          <h1><a href="#"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h1>
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="front-title">HEY NEIGHBOR<p class="lead">Settle it in Smash Locator</p></h1>
         </div>
       </div>
-    </div>
     </div>
   </header>
 
 
   <!-- Begin Navbar -->
   <div id="nav">
-    <div class="navbar navbar-default navbar-static">
+    <div class="navbar navbar-inverse navbar-static">
       <div class="container">
         <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
         <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -37,7 +33,7 @@
         </a>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="#">Smash Locator</a></li>
             <li class="divider"></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
@@ -68,7 +64,7 @@
     <% end %>
     <%= yield %>
   </div>
-  <footer>
+
     <div class="container">
       <footer>
         <div class="row">
@@ -99,6 +95,6 @@
       </footer>
       <!-- footer stuff here -->
     </div>
-  </footer>
+
 </body>
 </html>
