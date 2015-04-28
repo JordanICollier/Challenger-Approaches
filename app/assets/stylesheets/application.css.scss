@@ -1,9 +1,15 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 $purple: #68228B;
 $main-border: $purple;
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "layouts/users_show";
+
+
 
  .img-footer {
    max-width: 2em;
@@ -53,11 +59,49 @@ header {
   margin-top: 70px;
 }
 
-.backin{
+.backin {
+  background-color: #2C202E;
+  background-image: url(image-path('triangle.svg'));
+  background-color: black;
+}
+
+.smashin {
+  position: absolute;
+  width: 100%;
+  height: 280px;
   background-image: url(image-path('banner-smash.png'));
   max-width: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
+.smashin-overlay {
+  position: absolute;
+  width: 100%;
+  height: 280px;
+  opacity: 0.7;
+  background-color: black;
+}
+
+
 .blue {background-color:#916FF7;color:#fff}
+
+.front-title{
+  color:white;
+  text-align: center;
+}
+
+body {
+  background-image: url(image-path('galaxy.png'));
+  background-attachment: fixed;
+}
+
+.testin {
+  background-color: #131736;
+  border: 2px solid #364086;
+}
+
+.box-title {
+  color:white;
+  text-align: center;
+}
