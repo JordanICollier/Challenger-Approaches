@@ -6,8 +6,17 @@ class User < ActiveRecord::Base
 
   has_many :game_users
   has_many :games, through: :game_users
+  has_many :friend_lists
+  has_many :friends, through: :friend_lists, class_name: 'User', table_name: 'users'
+
 
   accepts_nested_attributes_for :game_users
+
+
+  scope :excluding, -> (user_id) {
+    where.not(id: user_id)
+  }
+
 
   def full_name
    "#{first_name} #{last_name}"
