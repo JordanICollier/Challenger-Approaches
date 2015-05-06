@@ -20,6 +20,8 @@
     - @user.friends.limit(6).each do |friend|
       %p= friend.full_name
 
+    = render @user.location
+
   %footer
     - if current_user == @user
       = link_to "EDIT", edit_user_path(@user.id)
