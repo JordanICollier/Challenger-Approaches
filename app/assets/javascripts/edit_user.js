@@ -1,5 +1,3 @@
-window.SmashBros = {};
-
 (function() {
 
   function GameInputObserver($el) {

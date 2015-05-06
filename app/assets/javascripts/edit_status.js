@@ -1,5 +1,6 @@
 (function() {
 
+  SmashBros.WhatsUpListener = WhatsUpListener;
 
   function WhatsUpListener(options) {
     this.$el = options.$el;
@@ -16,7 +17,7 @@
     });
   }
 
-  function userId() {
+  WhatsUpListener.prototype.userId = function() {
     return window.location.href.match(/users\/(\d)/)[1];
   }
 
@@ -24,11 +25,11 @@
     event.preventDefault();
     var whatsUp = $('#user_form input').val();
 
-    $.ajax('/users/'+userId(), {
+    $.ajax('/users/'+this.userId(), {
       dataType: 'json',
       type: 'put',
       data: {
-        id: userId(),
+        id: this.userId(),
         user: { "whats_up": whatsUp }
       },
       success: this.showUpdateStatus.bind(this, whatsUp),

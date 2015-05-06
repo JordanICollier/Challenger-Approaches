@@ -14,7 +14,10 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree .
+//= require smash_bros
+//= require edit_status
+//= require edit_user
+//= require geo_locator
 
 
 $(function(){
