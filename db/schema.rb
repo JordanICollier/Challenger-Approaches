@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418030248) do
+ActiveRecord::Schema.define(version: 20150502152519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,27 @@ ActiveRecord::Schema.define(version: 20150418030248) do
     t.string   "platform"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "title"
+    t.text     "about"
+    t.integer  "privacy"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "groups", ["user_id"], name: "index_groups_on_user_id", using: :btree
+
+  create_table "locations", force: :cascade do |t|
+    t.decimal  "lat",               precision: 10, scale: 6
+    t.decimal  "long",              precision: 10, scale: 6
+    t.integer  "user_id"
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.integer  "group_id"
+    t.string   "formatted_address"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,4 +79,5 @@ ActiveRecord::Schema.define(version: 20150418030248) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "groups", "users"
 end
