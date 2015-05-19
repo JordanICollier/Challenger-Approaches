@@ -24,3 +24,19 @@ Games
   - Users
   - Groups
   - validate that only smash bro games get saved
+
+->
+  go to edit profile
+  see dropdown of games ==
+  as well as existing games
+  select a game
+  click plus button
+  through ajax create a gameusers
+  update dom
+
+  Google Maps
+  -search feature!
+  -within certain miles
+  -search for groups and friends
+
+  Set a more defined address for groups
