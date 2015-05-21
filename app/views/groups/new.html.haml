@@ -1,0 +1,7 @@
+= simple_form_for Group.new, html: { class: 'geo-form'} do |f|
+  = f.input :title
+  = f.input :about, as: :text
+
+  %input.group-location{ type: 'text' }
+
+  = f.submit

@@ -1,4 +1,4 @@
-= simple_form_for(@user) do |f|
+= simple_form_for(@user), html: { class: 'geo-form' } do |f|
   = f.input :first_name
 
   = f.input :last_name
@@ -8,7 +8,7 @@
   = f.association :games, collection: Game.all, as: :check_boxes
   = f.association :friends, collection: User.excluding(current_user.id), as: :check_boxes, label_method: :full_name
 
-  %input.user-location{ type: 'text' }
+  %input.user-location{ type: 'text', redirect_url: user_path(@user) }
   -# = select_tag '', options_for_select(Game.all.pluck(:name, :id))
   -# %button( data-game=true ) +
 
