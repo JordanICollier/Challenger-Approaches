@@ -40,6 +40,10 @@ GEM
     autoprefixer-rails (5.0.0.1)
       execjs
     bcrypt (3.1.10)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.3)
@@ -202,6 +206,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
   bootstrap-sass (~> 3.3.3)
   byebug
   carrierwave (~> 0.10.0)
