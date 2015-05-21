@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :games, through: :game_users
   has_many :friend_lists
   has_many :friends, through: :friend_lists, class_name: 'User', table_name: 'users'
-  has_one  :location
+  has_one :location
 
 
   accepts_nested_attributes_for :game_users
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
       "/locations/location"
     end
 
-    attr_reader :lat, :long, :user_id, :formatted
+    attr_reader :lat, :long, :user_id, :formatted_address
   end
 
   def location
