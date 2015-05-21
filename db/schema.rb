@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 20150502152519) do
   create_table "locations", force: :cascade do |t|
     t.decimal  "lat",               precision: 10, scale: 6
     t.decimal  "long",              precision: 10, scale: 6
-    t.integer  "user_id"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
-    t.integer  "group_id"
+    t.integer  "user_id"
     t.string   "formatted_address"
+    t.integer  "group_id"
   end
 
   create_table "users", force: :cascade do |t|
