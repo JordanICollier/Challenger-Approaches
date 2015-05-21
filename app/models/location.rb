@@ -1,4 +1,4 @@
 class Location < ActiveRecord::Base
-  has_many :users
-  has_many :groups
+  belongs_to :users
+  belongs_to :groups
 end
