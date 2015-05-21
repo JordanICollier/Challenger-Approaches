@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:groups).permit(:title, :about).tap { |p|
+    params.require(:group).permit(:title, :about).tap { |p|
       p[:user_id] = current_user.id
     }
   end
