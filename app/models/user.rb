@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :friend_lists
   has_many :friends, through: :friend_lists, class_name: 'User', table_name: 'users'
   has_one :location
+  has_many :group_users
+  has_many :groups, through: :group_users
 
 
   accepts_nested_attributes_for :game_users
