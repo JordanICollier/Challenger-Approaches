@@ -3,7 +3,14 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :dashboard, :maps
   resources :locations, only: %i(create)
+  resources :group_users, only: %i(create)
   resources :groups
+  get '/find_groups' => 'find_groups#index'
+
+  namespace :api do
+    resources :locations, only: %i(index)
+    resources :groups, only: %i(index)
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
