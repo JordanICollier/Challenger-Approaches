@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+
+  find_groups:
+    search_user: 'Find groups in your area!'
