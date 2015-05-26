@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TeachMe</title>
+  <title>Challenger Approaches</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,7 +17,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <h1 class="front-title">Challenger Approaches<p class="lead">Settle it in Smash Locator</p></h1>
+          <h1 class="front-title">Challenger Approaches<p class="lead">Smash Bros. Group Locator</p></h1>
         </div>
       </div>
     </div>
@@ -36,10 +36,10 @@
         </a>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Smash Locator</a></li>
+            <li class="active"><a href="#">Home</a></li>
             <li class="divider"></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Groups</a></li>
           </ul>
           <ul class="nav pull-right navbar-nav">
             <li>
@@ -58,17 +58,14 @@
   </div>
 
 
-
-
-
   <div class="container">
     <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %>
     <%= yield %>
-  </div>
+  <!-- </div> -->
 
-    <div class="container">
+    <!-- <div class="container"> -->
       <footer>
         <div class="row">
           <div class="col-md-6">
