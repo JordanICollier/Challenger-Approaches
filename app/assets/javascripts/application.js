@@ -16,7 +16,6 @@
 //= require_tree ./templates
 //= require bootstrap-sprockets
 //= require minivents
-//= require turbolinks
 //= require underscore
 //= require smash_bros
 //= require edit_status
