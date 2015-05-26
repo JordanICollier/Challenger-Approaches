@@ -1,1 +1,2 @@
-= render @groups
+- user = current_user
+= render partial: 'groups/group', collection: @groups, locals: { user: user }

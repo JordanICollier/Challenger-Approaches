@@ -1,3 +1,9 @@
-= group.title
-= group.about
-= group.location.try(:formatted_address)
+%section.group-show-layout
+  %p= group.title
+  %p= group.about
+  %p= group.location.try(:formatted_address)
+
+  - if group.members.include? user
+    %button.joined{ disabled: true} Joined
+  - else
+    %button.join-me{ data: { group_id: group.id } } Join me
