@@ -12,12 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require handlebars
+//= require_tree ./templates
 //= require bootstrap-sprockets
+//= require minivents
 //= require turbolinks
+//= require underscore
 //= require smash_bros
 //= require edit_status
 //= require edit_user
 //= require geo_locator
+//= require join_group
+//= require find_groups
 
 
 $(function(){
