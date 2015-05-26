@@ -1,0 +1,9 @@
+%form#find-groups
+  %input{ type: 'text', placeholder: 'Search for groups', id: 'search'}
+  %button{ type: 'submit', class: 'search-button'} Search
+  %button{ type: 'submit', class: 'search-user'}= t('find_groups.search_user')
+
+.parent-map
+  #map-canvas{ data: { user_id: current_user.id } }
+
+#groups{ style: 'display: none;', data: { locations: @locations } }
