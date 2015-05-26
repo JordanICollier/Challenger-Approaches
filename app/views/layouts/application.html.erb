@@ -36,10 +36,10 @@
         </a>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li> <%= link_to "Home", root_path %> </li>
             <li class="divider"></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Groups</a></li>
+            <li> <%= link_to "Profile", user_path(current_user.id) %> </li>
+            <li> <%= link_to "Groups", groups_path %> </li>
           </ul>
           <ul class="nav pull-right navbar-nav">
             <li>
