@@ -37,7 +37,6 @@
     },
 
     createLocation: function(json, groupJson) {
-      debugger
       $.ajax({
         url: '/locations',
         method: 'POST',
