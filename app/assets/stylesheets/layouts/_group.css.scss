@@ -1,0 +1,9 @@
+.group-show-layout {
+  background-color: #efefef;
+  padding: 15px 30px;
+  border-bottom: 1px solid #333;
+
+  p { display: inline-block; }
+  .join-me, .joined { float: right; }
+  .joined { background-color: #333; color: white;}
+}
