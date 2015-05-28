@@ -24,3 +24,10 @@ en:
 
   find_groups:
     search_user: 'Find groups in your area!'
+    no_location: 'Click here to set up your location'
+
+  user_show:
+    no_about: 'This user has nothing interesting to say about themselves.'
+    no_name: 'Anonymous'
+    games_title: 'Games I play'
+    groups_header: "Groups I'm in"
