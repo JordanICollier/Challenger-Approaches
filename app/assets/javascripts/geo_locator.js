@@ -24,30 +24,38 @@
 
     submitForm: function(e) {
       e.preventDefault();
+      console.log('getting calculated')
+      $form = $(this).parents('form');
 
       $.ajax({
-        url: '/groups',
-        method: 'POST',
+        url: $form.attr('action'),
+        method: $form.attr('method'),
         type: 'JSON',
         processData: false,
         contentType: false,
-        data: new FormData($('.geo-form')[0]),
+        data: new FormData($form[0]),
         success: GeoLocator.fetchCoordinates
       });
     },
 
-    createLocation: function(json, groupJson) {
+    createLocation: function(json, resourceJson) {
+      var resourceIds = { users: { user_id: resourceJson.id}, groups: { group_id: resourceJson.id } };
+      var type = GeoLocator.type();
+
+      var resourceData = resourceIds[type];
+
+      var locationJson = _.extend({
+        lat: json.geometry.location.A,
+        long: json.geometry.location.F,
+        formatted_address: json.formatted_address
+      }, resourceData);
+
       $.ajax({
         url: '/locations',
         method: 'POST',
         type: 'JSON',
         data: {
-          location: {
-            lat: json.geometry.location.A,
-            long: json.geometry.location.F,
-            formatted_address: json.formatted_address,
-            group_id: groupJson.id
-          }
+          location: locationJson
         },
         success: GeoLocator.redirectToUser
       });
@@ -58,9 +66,13 @@
       groups: function() { return "/groups"; }
     },
 
+    type: function() {
+      // return 'users' or 'groups'
+      return window.location.href.match(/\/(\w+)\//)[1];
+    },
+
     redirectToUser: function() {
-      var type = window.location.href.match(/\/(\w+)\//)[1];
-      window.location = GeoLocator.supportedRedirects[type].call();
+      window.location = GeoLocator.supportedRedirects[GeoLocator.type()].call();
     }
   };
 

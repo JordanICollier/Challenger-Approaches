@@ -64,6 +64,7 @@
     var geocoder = new google.maps.Geocoder();
 
     var makeMarker = function(results) {
+      console.log('making marker');
       var map = populate.map.toMap();
 
       bounds.extend(results[0].geometry.location);
@@ -76,15 +77,16 @@
 
       MarkerStack.push(marker);
 
+      var rnd = function(x) {
+        return Math.round(x*100)/100;
+      };
 
       var location = _.select(GroupCache.cache, function(el) {
-        var lat1 = Math.round(el[0]), lat2 = Math.round(results[0].geometry.location.A),
-            long1 = Math.round(el[1]), long2 = Math.round(results[0].geometry.location.F);
+        var lat1 = rnd(el[0]), lat2 = rnd(results[0].geometry.location.A),
+            long1 = rnd(el[1]), long2 = rnd(results[0].geometry.location.F);
 
         return lat1 == lat2 && long1 == long2;
       });
-
-      console.log(location);
 
       new InfoWindow(location[0][2], marker, map).addObservers();
     };
@@ -128,8 +130,8 @@
   };
 
   InfoWindow.prototype.openWindow = function(json) {
-    console.log(json)
-    var content = HandlebarsTemplates['group'](json);
+    console.log(json);
+    var content = HandlebarsTemplates.group(json);
 
     var infowindow = new google.maps.InfoWindow({
       content: content
@@ -191,6 +193,11 @@
       e.preventDefault();
       var origin = populate.userLocation;
 
+      self.calculateDistances(origin);
+    });
+
+    $(document).on('find_groups:search_query', function(e, origin) {
+      e.preventDefault();
       self.calculateDistances(origin);
     });
   };

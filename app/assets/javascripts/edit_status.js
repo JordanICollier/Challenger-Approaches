@@ -38,7 +38,7 @@
   }
 
   WhatsUpListener.prototype.showUpdateStatus = function(newValue) {
-    this.$el.siblings('form').hide();
+    this.$el.siblings('form').find('input').hide();
     this.$el.siblings('.status').text(newValue).fadeIn();
   }
 
