@@ -26,7 +26,27 @@ class User < ActiveRecord::Base
       "/locations/location"
     end
 
-    attr_reader :lat, :long, :user_id, :formatted_address
+    attr_reader :user_id, :formatted_address
+
+    def lat
+      34.51329900
+    end
+
+    def long
+      -94.162880
+    end
+
+    def as_json(options={})
+      { lat: lat, long: long, formatted_address: formatted_address }
+    end
+
+    def present?
+      false
+    end
+    
+    def blank?
+      true
+    end
   end
 
   def location
