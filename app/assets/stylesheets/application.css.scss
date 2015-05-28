@@ -186,3 +186,29 @@ body {
   background-color: rgb(34, 34, 34);
   border-color: rgb(50, 50, 50);
 }
+
+.form-inputs input, span.hint {
+  display: block;
+}
+
+.form-actions {
+  padding-top: 30px;
+}
+
+.form-inputs label {
+  padding-top: 5px;
+}
+
+.form-inputs label, span.hint {
+  color: #999;
+}
+
+.sign-up-header {
+  color: #efefef;
+}
+
+.sign-up[type="submit"] {
+  border-color: rgb(54, 64, 134);
+  color: #efefef;
+  background-color: rgb(19, 23, 54);
+}
