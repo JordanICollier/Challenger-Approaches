@@ -1,3 +1,7 @@
+bugs:
+- user should only be able to join a group once
+
+
 This will be a smash bros locator app,
 it will be using google maps api,
 have personal profiles and enable you to find other smashers near you.
