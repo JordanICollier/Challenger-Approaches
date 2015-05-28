@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.includes(:location, :members).take(10)
+    @groups = Group.includes(:location, :members).all
   end
 
   def show
