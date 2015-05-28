@@ -1,0 +1,81 @@
+  <div class="row">
+    <div class="well col-md-10 col-md-offset-1">
+      <div class="col-md-12">
+        <div class="col-sm-1">
+          <div id="smaller-image">
+          <%= image_tag @user.avatar, id: "image-cropped-and-repositioned" %>
+          <% if current_user == @user %>
+          <%= link_to "Edit your profile", edit_user_path(@user.id) %>
+          <% end %>
+          </div>
+        </div>
+        
+
+    <div class="col-md-4 col-md-offset-3">
+
+    <div class="row main-title">
+      <h1 class="header">
+        <%= @user.full_name.presence || t("user_show.no_name") %>
+      </h1>
+      <section class="status-container">
+        <p class="status">
+          <%= @user.whats_up %>
+        </p>
+        <% if current_user == @user %>
+        <form id='user_form'>
+          <input for='user.whats_up'></input>
+        </form>
+          <%= link_to "What's up?", "#", data: { edit: 'whats-up'} %>
+        <% end %>
+      </section>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="col-md-12">
+  </br>
+    </div>
+
+    <div class="col-md-10">
+        <section class="content">
+          <p class="about">
+            <%= @user.about || t("user_show.no_about") %>
+          </p>
+        </section>
+      </div>
+
+
+      <div class="col-md-2 ">
+      <section class="user-games">
+        <h4 class="title">
+          <%= t("user_show.games_title") %>
+        </h4>
+        <% @user.games.each do |game| %>
+          <p class="game">
+            <%= game %>
+          </p>
+        <% end %>
+      </section>
+      <section class="about">
+        <h4>
+          <%= t("user_show.groups_header") %>
+        </h4>
+        <ul class="group-list">
+          <% @user.groups.each do |group| %>
+            <%= link_to group_path(group) do %>
+              <li class="group-layout">
+                <p class="group">
+                  <%= group.title %>
+                </p>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+</div>

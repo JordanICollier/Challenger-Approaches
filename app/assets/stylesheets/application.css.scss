@@ -23,7 +23,7 @@ $game-text-color: $light-gray;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "layouts/users_show";
-@import " layouts/group";
+@import "layouts/group";
 
 .img-footer {
  max-width: 2em;
@@ -211,4 +211,55 @@ body {
   border-color: rgb(54, 64, 134);
   color: #efefef;
   background-color: rgb(19, 23, 54);
+}
+
+h1 {
+  color: $game-text-color;
+  padding-left: 60px
+}
+
+.title {
+  color: $game-text-color
+}
+
+.game {
+  padding-left: 20px;
+  color: $game-text-color;
+}
+
+.about {
+  color: $game-text-color;
+}
+
+
+#image-cropped-and-repositioned {
+  width: 250px
+}
+
+#smaller-image { width: 100px }
+
+.status-container {
+  text-align: right;
+}
+
+.status {
+  width: 250px;
+  border: solid $main-border 1px;
+  padding: 5px;
+  min-height: 30px;
+  float: right;
+}
+
+[data-edit="whats-up"] {
+  margin-left: 15px;
+  width: 100%;
+  float: right
+}
+
+[for="user.whats_up"] {
+  width: 250px;
+  padding: 5px;
+  background-color: $secondary-bg-color;
+  float: right;
+  display: none;
 }
