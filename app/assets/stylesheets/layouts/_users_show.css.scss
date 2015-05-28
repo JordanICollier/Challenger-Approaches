@@ -1,43 +1,115 @@
 .users-show-layout {
+  padding-top: 30px;
+
   header {
     @include make-row();
   }
 
+  .status-container {
+    text-align: right;
+  }
+
+  .status {
+    width: 250px;
+    border: solid $main-border 1px;
+    padding: 5px;
+    min-height: 30px;
+    float: right;
+  }
+
+  [data-edit="whats-up"] {
+    margin-left: 15px;
+    width: 100%;
+    float: right
+  }
+
+  [for="user.whats_up"] {
+    width: 250px;
+    padding: 5px;
+    background-color: $secondary-bg-color;
+    float: right;
+    display: none;
+  }
+
   .main-title {
-    @include make-lg-column(10);
+    float: left;
+    width: 52%;
 
     .header {
-      @include make-lg-column(5);
       text-align: right;
+      margin-top: 0px;
+      line-height: 28px;
+      color: $secondary-bg-color;
+      margin-bottom: 15px;
+      line-height: 34px;
     }
 
-    .status-container {
-      @include make-lg-column(11);
-      left: 10%;
-      text-align: right;
-    }
-
-    .status {
-      width: 32%;
-      border: solid $main-border 1px;
-      padding: 5px;
-    }
-
-    [data-edit="whats-up"] {
-      @include make-lg-column(4);
-      margin-left: 15px;
-      margin-right: 40%;
-    }
-
-    [for="user.whats_up"] {
-      width: 32%;
-      padding: 5px;
-      float: left;
-      display: none;
+    .content {
+      width: 90%;
+      float: right;
+      padding-right: 15px;
+      margin-top: 15px;
     }
   }
 
+  .content {
+    background-color: $secondary-bg-color;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 30px;
+  }
+
   .profile-pic {
-    @include make-lg-column(2);
+    float: left;
+    width: 23%;
+    padding-left: 15px;
+    img { background-color: $no-pic-bg; }
+  }
+
+  .user-games {
+    margin-right: 15px;
+    float: right;
+    width: 20%;
+    // find a way to make this 100%;
+    height: 100%;
+    background-color: $games-bg;
+
+    .game {
+      padding-left: 20px;
+      color: $game-text-color;
+    }
+
+
+    .title {
+      text-transform: uppercase;
+      color: $no-pic-bg;
+      text-align: center;
+    }
+  }
+
+  ul.group-list {
+    padding-left: 0px;
+  }
+
+  .group-layout {
+    background-color: $main-bg-color;
+    list-style-type: none;
+    width: 30%;
+    padding-left: 15px;
+    height: 40px;
+    margin-bottom: 15px;
+    line-height: 40px;
+    transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+
+    &:hover {
+      background-color: $main-color;
+    }
+  }
+
+  .group {
+    font-size: 18px;
+    color: $main-link-color;
   }
 }

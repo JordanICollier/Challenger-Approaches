@@ -1,9 +1,24 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
-
+// protip: Put all these variables in a _variables.scss file
+// and @import them
 $purple: #68228B;
 $main-border: $purple;
+
+$purps: rgb(54, 64, 134);
+$dark-blue: rgb(19, 23, 54);
+$light-gray: #efefef;
+$med-gray: #999;
+$dark-gray: #333;
+
+$main-color: $purps;
+$main-bg-color: $dark-blue;
+$secondary-bg-color: $light-gray;
+$main-link-color: $light-gray;
+$no-pic-bg: $med-gray;
+$games-bg: $dark-gray;
+$game-text-color: $light-gray;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -16,8 +31,42 @@ $main-border: $purple;
  margin-right: .5em;
 }
 
-.search-user {
+.search-user, .no-location {
   float: right;
+}
+
+.navbar-form {
+  float: left;
+  width: 70%;
+  text-align: center;
+
+  input#main-search {
+    width: 80%;
+  }
+}
+
+.edit_it {
+  float: left;
+}
+
+.no-location {
+  color: #efefef;
+  padding-top: 5px;
+
+  &:hover {
+    text-decoration: none;
+    color: $main-color;
+  }
+
+  &:visited {
+    color: $main-color;
+  }
+}
+
+.search-user {
+  border-color: $main-color;
+  color: $main-link-color;
+  background-color: $main-bg-color;
 }
 
 footer {
