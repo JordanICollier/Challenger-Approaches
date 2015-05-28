@@ -41,23 +41,25 @@
             <% if current_user != nil %>
             <li> <%= link_to "Profile", user_path(current_user.id) %> </li>
             <li> <%= link_to "Groups", groups_path %> </li>
-            <% else %>
-            <li> <%= link_to "Sign up", new_user_registration_path %> </li>
-            <li> <%= link_to "Sign in", new_user_session_path %> </li>
-            <% end %>
 
           </ul>
-          <ul class="nav pull-right navbar-nav">
-            <li>
-              <form class="navbar-form">
-            <input type="text" class="form-control" placeholder="Search">
+          <form class="navbar-form" action="/find_groups" method="get">
+            <input type="text" class="form-control" id="main-search" placeholder="Search" name="[find_groups_q]">
             <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
           </form>
-            </li>
-            <li>
+          <ul class="nav pull-right navbar-nav">
+            <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
+            <!-- <li>
               <a href="#"><i class="glyphicon glyphicon-flag"></i> <span class="badge">2</span></a>
-            </li>
+            </li> -->
           </ul>
+          <% else %>
+          </ul>
+          <ul class="nav pull-right navbar-nav">
+          <li> <%= link_to "Sign up", new_user_registration_path %> </li>
+          <li> <%= link_to "Sign in", new_user_session_path %> </li>
+        </ul>
+          <% end %>
         </div>
       </div>
     </div><!-- /.navbar -->

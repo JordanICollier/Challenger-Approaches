@@ -1,0 +1,43 @@
+<h2 class="sign-up-header">Sign up</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :password, required: true, label: 'Password (8 character minimum)' %>
+    <%= f.input :password_confirmation, required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class: 'sign-up' %>
+  </div>
+<% end %>
+
+<style>
+  .form-inputs input, span.hint {
+    display: block;
+  }
+
+  .form-actions {
+    padding-top: 30px;
+  }
+
+  .form-inputs label {
+    padding-top: 5px;
+  }
+
+  .form-inputs label, span.hint {
+    color: #999;
+  }
+
+  .sign-up-header {
+    color: #efefef;
+  }
+
+  .sign-up[type="submit"] {
+    border-color: rgb(54, 64, 134);
+    color: #efefef;
+    background-color: rgb(19, 23, 54);
+  }
+</style>

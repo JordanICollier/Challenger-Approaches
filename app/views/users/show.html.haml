@@ -3,25 +3,30 @@
   %header
     %aside.profile-pic
       = image_tag @user.avatar
+      - if current_user == @user
+        = link_to "Edit your profile", edit_user_path(@user.id), class: "edit_it"
     .row.main-title
-      %h1.header= @user.full_name
+      %h1.header= @user.full_name.presence || t("user_show.no_name")
+
       %section.status-container
         %p.status= @user.whats_up
         - if current_user == @user
           %form#user_form
             %input(placeholder="#{@user.whats_up}" for="user.whats_up")
           = link_to "What's up?", "#", data: { edit: 'whats-up'}
+
+      %section.content
+        %p.about= @user.about || t("user_show.no_about")
+
+    %section.user-games
+      %h4.title= t("user_show.games_title")
+      - @user.games.each do |game|
+        %p.game= game
+
   %section.content
-    %textarea= @user.about
-    %h4 Games I play!
-    - @user.games.each do |game|
-      %p= game
-    %h4 All my friends
-    - @user.friends.limit(6).each do |friend|
-      %p= friend.full_name
-
-    = render @user.location
-
-  %footer
-    - if current_user == @user
-      = link_to "EDIT", edit_user_path(@user.id)
+    %h4= t("user_show.groups_header")
+    %ul.group-list
+      - @user.groups.each do |group|
+        = link_to group_path(group) do
+          %li.group-layout
+            %p.group= group.title

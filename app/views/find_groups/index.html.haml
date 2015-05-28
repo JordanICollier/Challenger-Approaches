@@ -1,9 +1,22 @@
 %form#find-groups
   %input{ type: 'text', placeholder: 'Search for groups', id: 'search'}
   %button{ type: 'submit', class: 'search-button'} Search
-  %button{ type: 'submit', class: 'search-user'}= t('find_groups.search_user')
+
+  - if current_user.location.present?
+    %button{ type: 'submit', class: 'search-user'}= t('find_groups.search_user')
+  - else
+    = link_to t('find_groups.no_location'), edit_user_path(current_user), class: 'no-location'
 
 .parent-map
   #map-canvas{ data: { user_id: current_user.id } }
 
 #groups{ style: 'display: none;', data: { locations: @locations } }
+
+
+- if @query_string.present?
+  :javascript
+    $(function() {
+      google.maps.event.addDomListener(window, 'load', function() {
+        $(document).trigger("find_groups:search_query", "#{@query_string}")
+      });
+    });
