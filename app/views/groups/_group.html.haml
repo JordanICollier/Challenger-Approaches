@@ -1,6 +1,15 @@
 %section.group-show-layout
-  %p= group.title
+
+  %p= group.title.upcase
+  %br
+  %strong
+    ABOUT
+  %br
   %p= group.about
+  %br
+  %strong
+    ADDRESS
+    %br
   %p= group.location.try(:formatted_address)
 
   - if group.members.include? user
