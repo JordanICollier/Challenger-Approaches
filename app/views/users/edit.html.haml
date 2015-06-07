@@ -2,17 +2,22 @@
   .well.col-md-4.col-md-offset-4
     = simple_form_for(current_user, html: { class: 'geo-form' }) do |f|
       = f.input :first_name, label_html: {class: "labels"}
+      %br
 
       = f.input :last_name, label_html: {class: "labels"}
+      %br
       = f.input :whats_up, label_html: {class: "labels"}
+      %br
       = f.input :about, as: :text, label_html: {class: "labels"}
+      %br
       = f.input :avatar, as: :file, label_html: {class: "labels"}
+      %br
       .labels
         = f.association :games, collection: Game.all, as: :check_boxes
       -# = f.association :friends, collection: User.excluding(current_user.id), as: :check_boxes, label_method: :full_name
-
+      %br
       %input.user-location{ type: 'text', redirect_url: user_path(@user) }
       -# = select_tag '', options_for_select(Game.all.pluck(:name, :id))
       -# %button( data-game=true ) +
-
+      %br
       = f.button :submit
