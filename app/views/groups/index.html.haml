@@ -1,2 +1,7 @@
+
 - user = current_user
-= render partial: 'groups/group', collection: @groups, locals: { user: user }
+.row.well
+  = link_to "CREATE A GROUP", new_group_path, class: "btn btn-info col-md-2 col-md-offset-10"
+  %br
+  %br
+  = render partial: 'groups/group', collection: @groups, locals: { user: user }
