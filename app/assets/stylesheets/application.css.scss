@@ -20,6 +20,7 @@ $no-pic-bg: $med-gray;
 $games-bg: $dark-gray;
 $game-text-color: $light-gray;
 $whatsup-color: $light-gray;
+$label-color: $light-gray;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -264,4 +265,10 @@ h1 {
   background-color: $secondary-bg-color;
   float: right;
   display: none;
+}
+
+.labels {
+  color: $label-color;
+  display: block;
+  font-family: "Arial", Helvetica, sans-serif;
 }
