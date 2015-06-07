@@ -1,7 +1,12 @@
-= simple_form_for Group.new, html: { class: 'geo-form'} do |f|
-  = f.input :title
-  = f.input :about, as: :text
+.row
+  .well.col-md-4.col-md-offset-4
+    = simple_form_for Group.new, html: { class: 'geo-form'} do |f|
+      = f.input :title, label_html: { class: 'labels'}
+      %br
+      = f.input :about, as: :text, label_html: { class: 'labels'}
+      %br
+      .labels
+        Address
+      %input.group-location{ type: 'text' }
 
-  %input.group-location{ type: 'text' }
-
-  = f.submit
+      = f.submit
