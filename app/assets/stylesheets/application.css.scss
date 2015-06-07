@@ -19,6 +19,7 @@ $main-link-color: $light-gray;
 $no-pic-bg: $med-gray;
 $games-bg: $dark-gray;
 $game-text-color: $light-gray;
+$whatsup-color: $light-gray;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -243,6 +244,7 @@ h1 {
 }
 
 .status {
+  color: $whatsup-color;
   width: 250px;
   border: solid $main-border 1px;
   padding: 5px;
