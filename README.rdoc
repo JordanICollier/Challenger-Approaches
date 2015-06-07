@@ -1,46 +1,10 @@
-bugs:
-- user should only be able to join a group once
+**Challenger Approaches is an application that brings competitive Super Smash Bros. Players together**
 
 
-This will be a smash bros locator app,
-it will be using google maps api,
-have personal profiles and enable you to find other smashers near you.
-Customization on what which game you want to play: Smash 4, Project M, Brawl, Melee, 20XX, 64
+ 1. You must first make an account This will enable one to track their groups they have played at and find groups within a 100 mi. radius.
+ 2.    Then setup your account, so that groups can recognize you when you come in.
+ 3. Search using the Google maps API, find your groups near you with your own address tied to your account or search for groups in other areas if you are out and about.
+ 4. join the group and become part of the smash community
 
-As a user you can
-  - Join a group
-  - Find a group in your area
-  - Display your favorite games to play
-  - Favorite groups
-  - About section
-  - Favicon of main smash bro
-
-As a group you can
-  - Add/Remove users
-  - Set a location
-  - Set the group to public/private
-  - Show what games your group plays
-  - About section
-
-Games
-  - Name
-  - Platform
-  - Users
-  - Groups
-  - validate that only smash bro games get saved
-
-->
-  go to edit profile
-  see dropdown of games ==
-  as well as existing games
-  select a game
-  click plus button
-  through ajax create a gameusers
-  update dom
-
-  Google Maps
-  -search feature!
-  -within certain miles
-  -search for groups and friends
-
-  Set a more defined address for groups
+This game supports searching for groups that play:
+  Smash 4, Project M, Brawl, Melee, 20XX, 64
