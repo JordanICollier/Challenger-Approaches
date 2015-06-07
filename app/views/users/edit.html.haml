@@ -10,7 +10,8 @@
       %br
       = f.input :about, as: :text, label_html: {class: "labels"}
       %br
-      = f.input :avatar, as: :file, label_html: {class: "labels"}
+      .labels
+        = f.input :avatar, as: :file, label_html: {class: "labels"}
       %br
       .labels
         = f.association :games, collection: Game.all, as: :check_boxes
