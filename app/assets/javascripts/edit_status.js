@@ -18,7 +18,7 @@
   };
 
   WhatsUpListener.prototype.userId = function() {
-    return window.location.href.match(/users\/(\d)/)[1];
+    return window.location.href.match(/users\/(\d+)/)[1];
   };
 
   WhatsUpListener.prototype.addUpdateUser = function(event) {

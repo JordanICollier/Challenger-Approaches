@@ -63,7 +63,7 @@
     var locator = new DistanceLocator();
     var geocoder = new google.maps.Geocoder();
 
-    var makeMarker = function(results) {
+    var makeMarker = function(results, image) {
       console.log('making marker');
       var map = populate.map.toMap();
 
@@ -73,7 +73,7 @@
         map: map,
         position: results[0].geometry.location,
         //icon: "http://www.nintendo.com/consumer/images/wiiGCN.gif"
-        icon: '/assets/videogames.png'     });
+        icon: image     });
 
       MarkerStack.push(marker);
 
@@ -91,6 +91,17 @@
       new InfoWindow(location[0][2], marker, map).addObservers();
     };
 
+    var createMarker = function(results) {
+      $.ajax({
+        url: '/api/videogame',
+        type: 'GET',
+        dataType: 'JSON',
+        success: function(json) {
+          makeMarker(results, json.image);
+        }
+      });
+    };
+
     locator.addObservers(populate);
     locator.on("calculated", function(distances) {
       var map = populate.map.toMap();
@@ -99,7 +110,7 @@
       bounds = new google.maps.LatLngBounds();
 
       for (var i=0; i < distances.length; i++) {
-        geocoder.geocode({ 'address': distances[i]}, makeMarker);
+        geocoder.geocode({ 'address': distances[i]}, createMarker);
       }
     });
   }
