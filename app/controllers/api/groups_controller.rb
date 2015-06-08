@@ -13,7 +13,8 @@ class Api::GroupsController < ApiController
       {
         title: group.title,
         about: group.about,
-        location: group.location.formatted_address
+        location: group.location.formatted_address,
+        id: group.id
       }
     end
   end
