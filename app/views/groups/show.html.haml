@@ -1,1 +1,8 @@
-= render partial: 'group', object: @group, locals: { user: current_user }
+.row.well
+  = render partial: 'group', object: @group, locals: { user: current_user }
+  %h1 Who's in the group
+  - @group.members.each do |member|
+    = link_to member.full_name, user_path(member.id)
+    .labels
+      = member.whats_up
+    %br
