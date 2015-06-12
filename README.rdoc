@@ -2,7 +2,7 @@
 
 
  1. You must first make an account This will enable one to track their groups they have played at and find groups within a 100 mi. radius.
- 2.    Then setup your account, so that groups can recognize you when you come in.
+ 2. Then setup your account, so that groups can recognize you when you come in.
  3. Search using the Google maps API, find your groups near you with your own address tied to your account or search for groups in other areas if you are out and about.
  4. join the group and become part of the smash community
 
