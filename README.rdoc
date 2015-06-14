@@ -6,4 +6,4 @@
  4. join the group and become part of the smash community
 
 This game supports searching for groups that play:
-  Smash 4, Project M, Brawl, Melee, 20XX, 64
+  Smash 4, Project M, Brawl, Melee, 20XX, n64
